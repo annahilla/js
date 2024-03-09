@@ -13,40 +13,36 @@
 
 <body>
     <div class="container">
-        <h1>To-Do App</h1>
+
 
         <div class="content">
-            <div class="add-task">
-                <input type="text" id="taskInput" class="task-input" placeholder="Enter a Task">
-                <div class="config">
-                    <div class="priority options">
-                        <h5 for="priority">Priority:</h5>
-                        <input type="radio" id="high" name="priority"><label for="high">High</label>
-                        <input type="radio" id="medium" name="priority" checked><label for="medium">Medium</label>
-                        <input type="radio" id="low" name="priority"><label for="low">Low</label>
-                    </div>
-                    <div class="categories options">
-                        <h5 for="categories">Category:</h5>
-                        <input type="radio" id="work" name="categories" checked><label for="work">Work</label>
-                        <input type="radio" id="personal" name="categories"><label for="personal">Personal</label>
-                        <input type="radio" id="errands" name="categories"><label for="errands">Errands</label>
-                    </div>
-                </div>
-            </div>
+
 
             <div class="list-task">
                 <h5>Your Tasks</h5>
                 <div id="taskList" class="task-output">
                     <div class="workList category" id="workList">
                         <h6>Work Tasks</h6>
+                        <div id="workTask" class="add-task-container">
+                            <input id="workTaskInput" class="add-task-input" type="text"
+                                placeholder="Enter a  Work Task">
+                        </div>
                         <div id="emptyWork" class="empty-task-item"></div>
                     </div>
                     <div class="personalList category" id="personalList">
                         <h6>Personal Tasks</h6>
+                        <div id="personalTask" class="add-task-container">
+                            <input id="personalTaskInput" class="add-task-input" type="text"
+                                placeholder="Enter a Personal Task">
+                        </div>
                         <div id="emptyPersonal" class="empty-task-item"></div>
                     </div>
                     <div class="errandsList category" id="errandsList">
                         <h6>Errands Tasks</h6>
+                        <div id="errandsTask" class="add-task-container">
+                            <input id="errandsTaskInput" class="add-task-input" type="text"
+                                placeholder="Enter an Errands Task">
+                        </div>
                         <div id="emptyErrands" class="empty-task-item"></div>
                     </div>
                 </div>

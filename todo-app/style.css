@@ -147,7 +147,22 @@ body {
     width: 18rem;
     background-color: #bebebe;
     border-radius: 2rem;
+}
 
+.add-task-input {
+    margin: 0.5rem;
+    height: 4rem;
+    width: 18rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0 2rem;
+    background-color: #f7f7f7;
+    border-radius: 2rem;
+    border: none;
+}
+
+input:focus {
+    outline: none;
 }
 
 .task-value {
@@ -158,6 +173,7 @@ body {
     align-items: center;
     height: 1rem;
     width: 90%;
+    font-size: 0.9rem;
 }
 
 .task-item.remove {
@@ -165,11 +181,10 @@ body {
 }
 
 .task-item small {
-    font-size: 0.7rem;
-    padding: 0.5rem;
+    font-size: 0.6rem;
+    padding: 0.3rem;
     margin-right: 0.5rem;
     border-radius: 2rem;
     color: #fff;
     background-color: #0d6efd;
-
 }
