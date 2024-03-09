@@ -28,12 +28,12 @@ function addTask(event) {
         task.innerHTML = `
             <div class="task-value">
             <p>${taskInput.value}<p>
-            <small id="priority"></small>
+            <small class="priority"></small>
             <i id="remove" class="remove-btn fa-solid fa-xmark"></i>
             </div>
         `;
 
-        let priorityTag = task.querySelector('small');
+        let priorityTag = task.querySelector('.priority');
         let removeBtn = task.querySelector('.remove-btn');
         removeBtn.addEventListener('click', () => task.remove());
 
@@ -48,44 +48,40 @@ function addTask(event) {
         }
 
         //Priorities
-        let priority = document.getElementById('priority');
-
         if (highPriority.checked) {
             priorityTag.innerHTML = "High Priority";
             priorityTag.style.backgroundColor = 'red';
-            priority.classList.add('highPriorityChecked');
+            priorityTag.classList.add('highPriorityChecked');
         } else if (mediumPriority.checked) {
             priorityTag.innerHTML = "Medium Priority";
-            priority.classList.add('mediumPriorityChecked');
+            priorityTag.classList.add('mediumPriorityChecked');
         } else if (lowPriority.checked) {
             priorityTag.innerHTML = "Low Priority";
             priorityTag.style.backgroundColor = 'green';
-            priority.classList.add('lowPriorityChecked');
+            priorityTag.classList.add('lowPriorityChecked');
         }
 
         taskInput.value = '';
         taskItem = task;
 
         //Priority Config
-        priority.addEventListener('dblclick', (e) => {
+        priorityTag.addEventListener('click', (e) => {
+            console.log(123);
             if (e.target.innerHTML === 'Low Priority') {
-                priority.innerHTML = 'Medium Priority';
-                priority.style.backgroundColor = '';
-                priority.classList.remove('lowPriorityChecked');
-                priority.classList.add('mediunPriorityChecked');
-                console.log(e.target);
+                priorityTag.innerHTML = 'Medium Priority';
+                priorityTag.style.backgroundColor = '';
+                priorityTag.classList.remove('lowPriorityChecked');
+                priorityTag.classList.add('mediumPriorityChecked');
             } else if (e.target.innerHTML === 'Medium Priority') {
-                priority.innerHTML = 'High Priority';
-                priority.style.backgroundColor = 'red';
-                priority.classList.remove('mediumPriorityChecked');
-                priority.classList.add('highPriorityChecked');
-                console.log(e.target);
+                priorityTag.innerHTML = 'High Priority';
+                priorityTag.style.backgroundColor = 'red';
+                priorityTag.classList.remove('mediumPriorityChecked');
+                priorityTag.classList.add('highPriorityChecked');
             } else if (e.target.innerHTML === 'High Priority') {
-                priority.innerHTML = 'Low Priority';
-                priority.style.backgroundColor = 'green';
-                priority.classList.remove('highPriorityChecked');
-                priority.classList.add('lowPriorityChecked');
-                console.log(e.target);
+                priorityTag.innerHTML = 'Low Priority';
+                priorityTag.style.backgroundColor = 'green';
+                priorityTag.classList.remove('highPriorityChecked');
+                priorityTag.classList.add('lowPriorityChecked');
             }
         })
 
