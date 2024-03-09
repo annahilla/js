@@ -28,7 +28,7 @@ function addTask(event) {
         task.innerHTML = `
             <div class="task-value">
             <p>${taskInput.value}<p>
-            <small></small>
+            <small id="priority"></small>
             <i id="remove" class="remove-btn fa-solid fa-xmark"></i>
             </div>
         `;
@@ -47,17 +47,47 @@ function addTask(event) {
             errandsList.insertBefore(task, emptyErrands);
         }
 
+        //Priorities
+        let priority = document.getElementById('priority');
+
         if (highPriority.checked) {
             priorityTag.innerHTML = "High Priority";
             priorityTag.style.backgroundColor = 'red';
+            priority.classList.add('highPriorityChecked');
         } else if (mediumPriority.checked) {
             priorityTag.innerHTML = "Medium Priority";
+            priority.classList.add('mediumPriorityChecked');
         } else if (lowPriority.checked) {
             priorityTag.innerHTML = "Low Priority";
             priorityTag.style.backgroundColor = 'green';
+            priority.classList.add('lowPriorityChecked');
         }
+
         taskInput.value = '';
         taskItem = task;
+
+        //Priority Config
+        priority.addEventListener('dblclick', (e) => {
+            if (e.target.innerHTML === 'Low Priority') {
+                priority.innerHTML = 'Medium Priority';
+                priority.style.backgroundColor = '';
+                priority.classList.remove('lowPriorityChecked');
+                priority.classList.add('mediunPriorityChecked');
+                console.log(e.target);
+            } else if (e.target.innerHTML === 'Medium Priority') {
+                priority.innerHTML = 'High Priority';
+                priority.style.backgroundColor = 'red';
+                priority.classList.remove('mediumPriorityChecked');
+                priority.classList.add('highPriorityChecked');
+                console.log(e.target);
+            } else if (e.target.innerHTML === 'High Priority') {
+                priority.innerHTML = 'Low Priority';
+                priority.style.backgroundColor = 'green';
+                priority.classList.remove('highPriorityChecked');
+                priority.classList.add('lowPriorityChecked');
+                console.log(e.target);
+            }
+        })
 
         // Attach drag and drop event listeners to new task
         task.addEventListener('dragstart', dragStart);
