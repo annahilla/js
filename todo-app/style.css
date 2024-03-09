@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+
+.container h1 {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-task {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.add-task .task-input {
+    width: 20rem;
+    font-size: 1.2rem;
+    height: 3rem;
+    text-align: center;
+    border-radius: 4rem;
+    border: 1px solid #bebcbc;
+    margin-right: 1rem;
+}
+
+.add-task input:focus {
+    outline: none;
+}
+
+.config {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    height: 3rem;
+    border: 1px solid #bebcbc;
+    border-radius: 2rem;
+}
+
+.options h5 {
+    font-size: 0.8rem;
+    margin: 0.5rem;
+}
+
+.options label {
+    margin-right: 1rem;
+    font-size: 0.8rem;
+}
+
+.list-task {
+    background-color: #f4f4f4;
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.list-task h5 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 2rem 0;
+}
+
+.list-task .task-output {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #dfdddd;
+    border-radius: 1rem;
+    padding-bottom: 3rem;
+    height: auto;
+}
+
+
+.category h6 {
+    font-size: 1rem;
+}
+
+.task-item {
+    position: relative;
+    margin: 0.5rem;
+    background-color: #fff;
+    border-radius: 2rem;
+    width: 18rem;
+    height: 4rem;
+    cursor: pointer;
+    display: flex;
+}
+
+.invisible {
+    display: none;
+}
+
+.empty-task-item {
+    display: inline-block;
+    margin: 0.5rem;
+    height: 5rem;
+    width: 19rem;
+    background-color: transparent;
+    border-radius: 2rem;
+}
+
+.hovered-task-item {
+    margin: 0.5rem;
+    height: 4rem;
+    width: 18rem;
+    background-color: #bebebe;
+    border-radius: 2rem;
+
+}
+
+.task-value {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1rem;
+    width: 90%;
+}
+
+.task-item.remove {
+    display: none;
+}
+
+.task-item small {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 2rem;
+    color: #fff;
+    background-color: #0d6efd;
+
+}
